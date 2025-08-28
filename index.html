@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Finance Tracker</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header>
+        <h1 class="balance" id="balance">0.00₺</h1>
+      </header>
+
+      <section class="actions">
+        <button class="btn addTrns-btn" onclick="toggleModal()">
+          Add Transaction
+        </button>
+      </section>
+
+      <section>
+        <h2 style="text-align: center">History</h2>
+        <div class="history-box">
+          <ul id="history" class="history-list"></ul>
+        </div>
+      </section>
+    </main>
+
+    <div id="modal" class="modal hidden">
+      <div class="modal-content">
+        <h3 id="modal-title">Add Transaction</h3>
+
+        <select id="modal-type" placeholder="Type">
+          <option value="" disabled selected>Select type</option>
+          <option value="in">Income</option>
+          <option value="out">Expense</option>
+        </select>
+
+        <input type="text" id="modal-amount" placeholder="Amount" />
+        <input type="text" id="modal-desc" placeholder="Description" />
+
+        <div class="modal-actions">
+          <button class="btn cancel-btn" onclick="toggleModal()">Cancel</button>
+          <button class="btn save-btn" onclick="save()">Save</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
